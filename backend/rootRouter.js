@@ -23,5 +23,5 @@ router.use("/vprofiles", vehicleProfileRoutes);
 router.use("/vehicles", vehicleRoutes);
 router.use("/trips", tripRouter);
 router.use("/booking-users", clientRouer);
-router.use("/inquiry", inqiueryRouter);
+router.use("/inquiries", inqiueryRouter);
 module.exports = router;

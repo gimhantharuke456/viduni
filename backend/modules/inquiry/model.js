@@ -4,7 +4,7 @@ const inquirySchema = new mongoose.Schema(
   {
     bookingUserId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "BookingUser",
+      ref: "Client",
       required: [true, "Booking user ID is required"],
     },
     date: {

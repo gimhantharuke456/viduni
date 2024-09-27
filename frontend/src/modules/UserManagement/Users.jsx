@@ -21,7 +21,7 @@ import ViewUser from "./ViewUser";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
-const Users = () => {
+const Drivers = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -247,4 +247,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default Drivers;

@@ -7,7 +7,7 @@ const inquiryService = {
   createInquiry: async (inquiryData) => {
     try {
       const response = await axios.post(
-        `${API_BASE_URL}/api/inquiries`,
+        `${API_BASE_URL}/inquiries`,
         inquiryData
       );
       return response.data;
@@ -20,7 +20,7 @@ const inquiryService = {
 
   getAllInquiries: async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/inquiries`);
+      const response = await axios.get(`${API_BASE_URL}/inquiries`);
       return response.data;
     } catch (error) {
       throw error.response
@@ -31,7 +31,7 @@ const inquiryService = {
 
   getInquiryById: async (id) => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/inquiries/${id}`);
+      const response = await axios.get(`${API_BASE_URL}/inquiries/${id}`);
       return response.data;
     } catch (error) {
       throw error.response
@@ -43,7 +43,7 @@ const inquiryService = {
   updateInquiry: async (id, inquiryData) => {
     try {
       const response = await axios.put(
-        `${API_BASE_URL}/api/inquiries/${id}`,
+        `${API_BASE_URL}/inquiries/${id}`,
         inquiryData
       );
       return response.data;
@@ -56,9 +56,7 @@ const inquiryService = {
 
   deleteInquiry: async (id) => {
     try {
-      const response = await axios.delete(
-        `${API_BASE_URL}/api/inquiries/${id}`
-      );
+      const response = await axios.delete(`${API_BASE_URL}/inquiries/${id}`);
       return response.data;
     } catch (error) {
       throw error.response

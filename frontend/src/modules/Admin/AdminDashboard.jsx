@@ -16,7 +16,6 @@ import {
 } from "@ant-design/icons";
 import { Route, Routes, Link, Outlet } from "react-router-dom";
 import AddUser from "../UserManagement/AddUser";
-import Users from "../UserManagement/Users";
 import OvertimeCalculation from "../UserManagement/OvertimeCalculation/OvertimeCalculation";
 import AddMaintenance from "../Maintaince/AddMaintance";
 import MaintanceList from "../Maintaince/MaintanceList";
@@ -27,6 +26,10 @@ import InventoryManager from "../Inventory/InventoryManager";
 import VehicleProfileManager from "../Vehicel/VehicleProfileManager";
 import VehicleDocumentManger from "../Vehicel/VehicleDocumentManger";
 import VehicleNotification from "../Vehicel/VehicleNotification";
+import UserInquiries from "../Inquiry/UserInquiries";
+import Drivers from "../UserManagement/Users";
+import Users from "../Client/Users";
+import AdminBookings from "../Bookings/AdminBookings";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -40,14 +43,19 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem("User Management", "user-management", <UserOutlined />, [
+  getItem(
+    <Link to="/admin/clients">User</Link>,
+    "clients-profile",
+    <BehanceSquareFilled />
+  ),
+  getItem("Driver Management", "user-management", <UserOutlined />, [
     getItem(
-      <Link to="/admin/users">Users</Link>,
+      <Link to="/admin/users">Drviers</Link>,
       "users",
       <UsergroupAddOutlined />
     ),
     getItem(
-      <Link to="/admin/add-user">Add User</Link>,
+      <Link to="/admin/add-user">Add Driver</Link>,
       "add-user",
       <UserAddOutlined />
     ),
@@ -106,6 +114,16 @@ const items = [
     "vehicle-notification",
     <NotificationFilled />
   ),
+  getItem(
+    <Link to="/admin/admin-inquiries">Inquiries</Link>,
+    "admin-inquiries",
+    <NotificationFilled />
+  ),
+  getItem(
+    <Link to="/admin/bookings">Bookings</Link>,
+    "admin-bookings",
+    <NotificationFilled />
+  ),
 ];
 
 const AdminDashboard = () => {
@@ -136,7 +154,8 @@ const AdminDashboard = () => {
           >
             <Routes>
               <Route path="/" element={<h2>Welcome to Admin Dashboard</h2>} />
-              <Route path="users" element={<Users />} />
+              <Route path="clients" element={<Users />} />
+              <Route path="users" element={<Drivers />} />
               <Route path="add-user" element={<AddUser />} />
               <Route path="over-time" element={<OvertimeCalculation />} />
               <Route path="maintances" element={<MaintanceList />} />
@@ -145,6 +164,7 @@ const AdminDashboard = () => {
               <Route path="driver-income" element={<DriverIncomeManager />} />
               <Route path="driver-expense" element={<ExpenseManger />} />
               <Route path="inventory" element={<InventoryManager />} />
+              <Route path="bookings" element={<AdminBookings />} />
               <Route
                 path="vehicle-profile"
                 element={<VehicleProfileManager />}
@@ -157,6 +177,7 @@ const AdminDashboard = () => {
                 path="vehicle-notification"
                 element={<VehicleNotification />}
               />
+              <Route path="admin-inquiries" element={<UserInquiries />} />
             </Routes>
             <Outlet />
           </div>

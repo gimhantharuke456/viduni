@@ -15,9 +15,10 @@ const api = axios.create({
 // Create a new trip booking
 export const createTripBooking = async (tripData) => {
   try {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
     const response = await api.post("/trips", {
       ...tripData,
-      userId: "66d1cafc5a8562ef9d236bdc",
+      userId: user["_id"],
     });
     return response.data;
   } catch (error) {

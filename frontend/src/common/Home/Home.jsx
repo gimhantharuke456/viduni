@@ -8,6 +8,9 @@ import BookingPage from "../../modules/Bookings/BookingPage";
 import Login from "../../modules/Auth/Login";
 import Register from "../../modules/Auth/Register";
 import Profile from "../../modules/Profile/Profile";
+import Feedbacks from "../../modules/Inquiry/Feedbacks";
+import MyFeedbacks from "../../modules/Inquiry/MyFeedbacks";
+import MyBookings from "../../modules/Bookings/MyBookings";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -36,7 +39,10 @@ const Home = () => {
           <Route element={<BookingPage />} path="/make-booking" />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />{" "}
+          <Route path="make-inquiry" element={<Feedbacks />} />
+          <Route path="my-feedbacks" element={<MyFeedbacks />} />
+          <Route path="my-bookings" element={<MyBookings />} />
         </Routes>
       </Container>
       <Footer />

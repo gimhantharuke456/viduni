@@ -62,7 +62,14 @@ const NavBar = () => {
         <Link to="/">Home</Link>
         <Link to="/vehicle-profiles">Vehicle Profiles</Link>
         <Link to="/bus-timetables">Bus Timetables</Link>
-        <Link to="/make-booking">Make Booking</Link>
+        {localStorage.getItem("currentUser") && (
+          <>
+            <Link to="/make-booking">Make Booking</Link>
+            <Link to="/make-inquiry">Make Inquiry</Link>
+            <Link to="/my-feedbacks">My Inquiries</Link>
+            <Link to="/my-bookings">My Bookings</Link>
+          </>
+        )}
       </NavLinks>
 
       <SearchContainer>

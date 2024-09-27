@@ -146,6 +146,7 @@ const Profile = () => {
               onConfirm={() => {
                 localStorage.clear();
                 navigate("/");
+                window.location.reload();
               }}
               okText="Yes"
               cancelText="No"
