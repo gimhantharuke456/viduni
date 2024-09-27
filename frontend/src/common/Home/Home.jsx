@@ -46,7 +46,7 @@ const Home = () => {
           <Route path="my-feedbacks" element={<MyFeedbacks />} />
           <Route path="my-bookings" element={<MyBookings />} />
           <Route path="vehicle-list" element={<VehicleProfileList />} />
-          <Route path="user-inventory" element={<UserInventories />} />
+          <Route path="user-inventory-" element={<UserInventories />} />
         </Routes>
       </Container>
       <Footer />

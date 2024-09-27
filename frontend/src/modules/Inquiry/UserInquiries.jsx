@@ -166,7 +166,7 @@ const UserInquiries = () => {
     <div style={{ padding: "2rem", backgroundColor: "#f0f2f5" }}>
       <Row gutter={[16, 16]} align="middle" justify="space-between">
         <Col>
-          <h2>User Inquiries</h2>
+          <h2>User Feedbacks</h2>
         </Col>
         <Col>
           <Button type="primary" onClick={generatePDF}>

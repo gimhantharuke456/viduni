@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Layout, Menu, theme } from "antd";
 import {
   UserOutlined,
@@ -14,7 +14,7 @@ import {
   NotificationFilled,
   FileExcelFilled,
 } from "@ant-design/icons";
-import { Route, Routes, Link, Outlet } from "react-router-dom";
+import { Route, Routes, Link, Outlet, useNavigate } from "react-router-dom";
 import AddUser from "../UserManagement/AddUser";
 import OvertimeCalculation from "../UserManagement/OvertimeCalculation/OvertimeCalculation";
 import AddMaintenance from "../Maintaince/AddMaintance";
@@ -127,10 +127,17 @@ const items = [
 ];
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  const admin = localStorage.getItem("admin");
+  useEffect(() => {
+    if (!admin) {
+      navigate("/admin-login");
+    }
+  }, [admin]);
 
   return (
     <Layout style={{ minHeight: "100vh", maxWidth: "100vw" }}>
