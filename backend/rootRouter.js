@@ -8,6 +8,9 @@ const inventoryRoutes = require("./modules/inventory/route");
 const maintenanceRoutes = require("./modules/maintaince/route");
 const vehicleProfileRoutes = require("./modules/vehicel.profile/route");
 const vehicleRoutes = require("./modules/vehicle.document/route");
+const tripRouter = require("./modules/trip.booking/route");
+const clientRouer = require("./modules/client/route");
+const inqiueryRouter = require("./modules/inquiry/route");
 const router = express.Router();
 
 router.use("/users", userRoutes);
@@ -18,5 +21,7 @@ router.use("/inventory", inventoryRoutes);
 router.use("/maintenance", maintenanceRoutes);
 router.use("/vprofiles", vehicleProfileRoutes);
 router.use("/vehicles", vehicleRoutes);
-
+router.use("/trips", tripRouter);
+router.use("/booking-users", clientRouer);
+router.use("/inquiry", inqiueryRouter);
 module.exports = router;
