@@ -1,10 +1,24 @@
 // controllers/tripBookingController.js
+const { getUser } = require("../client/service");
+const sendMail = require("../mails/mailsend");
 const tripBookingService = require("./service");
 
 // Create a new trip booking
 const createTripBooking = async (req, res) => {
   try {
     const tripData = req.body;
+    try {
+      const user = await getUser(tripData.userId);
+      if (user) {
+        await sendMail(
+          user.email,
+          "New Trip Booking Created",
+          `Dear ${user?.username},We received your booking, we will get backe to you soon`
+        );
+      }
+    } catch (error) {
+      console.error(`Error sending emmail of booking ${error}`);
+    }
     const newTrip = await tripBookingService.createTripBooking(tripData);
     return res.status(201).json(newTrip);
   } catch (error) {
