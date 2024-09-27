@@ -60,7 +60,7 @@ const NavBar = () => {
     <NavBarContainer>
       <NavLinks>
         <Link to="/">Home</Link>
-        <Link to="/vehicle-profiles">Vehicle Profiles</Link>
+        <Link to="/vehicle-list">Vehicle Profiles</Link>
         <Link to="/bus-timetables">Bus Timetables</Link>
         {localStorage.getItem("currentUser") && (
           <>

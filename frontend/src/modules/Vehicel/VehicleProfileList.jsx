@@ -10,7 +10,8 @@ const ScrollContainer = styled.div`
   overflow-x: auto;
   padding: 20px;
   gap: 20px;
-
+  height: 100%;
+  width: 100%;
   /* Scrollbar styles */
   &::-webkit-scrollbar {
     width: 8px;
@@ -51,7 +52,7 @@ const VehicleProfileList = () => {
     // Fetch vehicle profiles on component mount
     const fetchProfiles = async () => {
       try {
-        const data = await vProfileService.getAllProfiles();
+        const data = await vProfileService.getAllVProfiles();
         setProfiles(data);
       } catch (error) {
         console.error("Error fetching profiles:", error);
@@ -64,8 +65,8 @@ const VehicleProfileList = () => {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Vehicle Profiles</h2>
+    <div style={{ padding: "20px", background: "rgba(211, 211, 211, 0.5);" }}>
+      <h2 style={{ color: "white" }}>Vehicle Profiles</h2>
       {loading ? (
         <Spin />
       ) : (
