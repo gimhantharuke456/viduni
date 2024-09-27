@@ -48,11 +48,6 @@ bookingUserSchema.pre("save", async function (next) {
   next();
 });
 
-// Method to check if password is correct
-bookingUserSchema.methods.checkPassword = async function (candidatePassword) {
-  return await bcrypt.compare(candidatePassword, this.password);
-};
-
 const BookingUser = mongoose.model("Client", bookingUserSchema);
 
 module.exports = BookingUser;

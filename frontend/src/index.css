@@ -10,4 +10,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}.ant-popover-buttons .ant-btn {
+  width: 50px !important;
+}.ant-popover {
+  z-index: 1050; /* Adjust this value as needed */
+}
+
+.ant-popover-inner-content {
+  max-width: 300px; /* Adjust width as needed */
 }

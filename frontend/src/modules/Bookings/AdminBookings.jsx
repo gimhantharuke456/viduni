@@ -156,8 +156,10 @@ const AdminBookings = () => {
           onConfirm={() => handleUpdatePaidStatus(record._id, paidStatus)}
           okText="Yes"
           cancelText="No"
+          style={{ width: 100 }}
         >
           <Button
+            style={{ width: 19 }}
             disabled={paidStatus}
             type={paidStatus ? "primary" : "default"}
           >

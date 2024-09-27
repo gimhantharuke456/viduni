@@ -1,4 +1,5 @@
 const BookingUser = require("./model");
+const bcrypt = require("bcryptjs");
 
 class BookingUserService {
   async createBookingUser(userData) {
@@ -38,10 +39,16 @@ class BookingUserService {
   async loginUser(email, password) {
     try {
       const user = await this.getBookingUserByEmail(email);
-      if (!user || !(await user.isPasswordValid(password))) {
+      if (!user) {
         throw new Error("Invalid email or password");
       }
-      return user;
+
+      const validate = await bcrypt.compare(password, user.password);
+      console.log(user.password, password);
+      if (validate) {
+        return user;
+      }
+      throw new Error("Error during login");
     } catch (error) {
       throw new Error("Error during login");
     }
