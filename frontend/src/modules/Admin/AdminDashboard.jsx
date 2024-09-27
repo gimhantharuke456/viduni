@@ -48,9 +48,9 @@ const items = [
     "clients-profile",
     <BehanceSquareFilled />
   ),
-  getItem("Driver Management", "user-management", <UserOutlined />, [
+  getItem("Salary Management", "user-management", <UserOutlined />, [
     getItem(
-      <Link to="/admin/users">Drviers</Link>,
+      <Link to="/admin/users">Salary Details</Link>,
       "users",
       <UsergroupAddOutlined />
     ),
@@ -95,7 +95,7 @@ const items = [
     ),
   ]),
   getItem(
-    <Link to="/admin/inventory">Driver Expense</Link>,
+    <Link to="/admin/inventory">Inventory</Link>,
     "inventory",
     <MailFilled />
   ),
@@ -115,7 +115,7 @@ const items = [
     <NotificationFilled />
   ),
   getItem(
-    <Link to="/admin/admin-inquiries">Inquiries</Link>,
+    <Link to="/admin/admin-inquiries">Feedbacks</Link>,
     "admin-inquiries",
     <NotificationFilled />
   ),
@@ -133,7 +133,7 @@ const AdminDashboard = () => {
   } = theme.useToken();
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout style={{ minHeight: "100vh", maxWidth: "100vw" }}>
       <Sider
         collapsible
         collapsed={collapsed}

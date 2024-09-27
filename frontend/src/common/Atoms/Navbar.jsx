@@ -65,8 +65,8 @@ const NavBar = () => {
         {localStorage.getItem("currentUser") && (
           <>
             <Link to="/make-booking">Make Booking</Link>
-            <Link to="/make-inquiry">Make Inquiry</Link>
-            <Link to="/my-feedbacks">My Inquiries</Link>
+            <Link to="/make-inquiry">Make Feedback</Link>
+            <Link to="/my-feedbacks">My Feedbacks</Link>
             <Link to="/my-bookings">My Bookings</Link>
           </>
         )}

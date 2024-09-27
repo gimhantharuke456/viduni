@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { UserOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
-const logoUrl = "path/to/your/logo.png";
+const logoUrl = "buslogo.jpeg";
 
 // Styled components for header
 const HeaderContainer = styled.header`

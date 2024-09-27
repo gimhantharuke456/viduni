@@ -9,6 +9,7 @@ import {
   message,
   Row,
   Space,
+  Alert,
   Input as AntInput,
 } from "antd";
 import {
@@ -164,6 +165,9 @@ const InventoryManager = () => {
     doc.save("inventory_report.pdf");
   };
 
+  // Check if there are items with stock count below 40
+  const hasLowStockItems = items.some((item) => item.Stock_Count < 40);
+
   return (
     <div>
       <Row justify="space-between" style={{ marginBottom: 20 }}>
@@ -186,6 +190,17 @@ const InventoryManager = () => {
           </Button>
         </Space>
       </Row>
+
+      {/* Show warning message if any item has low stock */}
+      {hasLowStockItems && (
+        <Alert
+          message="Warning"
+          description="Some items have a stock count below 40. Please restock."
+          type="warning"
+          showIcon
+          style={{ marginBottom: 20 }}
+        />
+      )}
 
       <Table
         dataSource={items.filter((item) =>

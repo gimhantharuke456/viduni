@@ -175,8 +175,9 @@ const AdminBookings = () => {
           onConfirm={() => handleDelete(record._id)}
           okText="Yes"
           cancelText="No"
+          getPopupContainer={(triggerNode) => triggerNode.parentNode}
         >
-          <Button type="link" danger icon={<DeleteOutlined />} />
+          <Button danger icon={<DeleteOutlined />} />
         </Popconfirm>
       ),
     },

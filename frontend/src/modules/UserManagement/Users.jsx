@@ -161,7 +161,7 @@ const Drivers = () => {
   return (
     <div>
       <Row justify={"space-between"}>
-        <h1>Drivers</h1>
+        <h1>Salary Details</h1>
         <Input
           placeholder="Search by driver name"
           value={searchTerm}
