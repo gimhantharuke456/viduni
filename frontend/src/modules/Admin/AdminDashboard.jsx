@@ -13,6 +13,7 @@ import {
   BehanceSquareFilled,
   NotificationFilled,
   FileExcelFilled,
+  LogoutOutlined,
 } from "@ant-design/icons";
 import { Route, Routes, Link, Outlet, useNavigate } from "react-router-dom";
 import AddUser from "../UserManagement/AddUser";
@@ -42,90 +43,6 @@ function getItem(label, key, icon, children) {
   };
 }
 
-const items = [
-  getItem(
-    <Link to="/admin/clients">User</Link>,
-    "clients-profile",
-    <BehanceSquareFilled />
-  ),
-  getItem("Salary Management", "user-management", <UserOutlined />, [
-    getItem(
-      <Link to="/admin/users">Salary Details</Link>,
-      "users",
-      <UsergroupAddOutlined />
-    ),
-    getItem(
-      <Link to="/admin/add-user">Add Driver</Link>,
-      "add-user",
-      <UserAddOutlined />
-    ),
-    getItem(
-      <Link to="/admin/over-time">Over Time Calculation</Link>,
-      "over-time",
-      <ClockCircleOutlined />
-    ),
-  ]),
-  getItem("Maintance Mangement", "over-time", <MailFilled />, [
-    getItem(
-      <Link to="/admin/maintances">Maintenance</Link>,
-      "all-maintances",
-      <PlusCircleFilled />
-    ),
-    getItem(
-      <Link to="/admin/add-maintances">Add Maintenance</Link>,
-      "add-main",
-      <PlusCircleFilled />
-    ),
-  ]),
-  getItem("Income/Expense Mangement", "incme-expense", <MailFilled />, [
-    getItem(
-      <Link to="/admin/booking-income">Booking Income</Link>,
-      "booking-income",
-      <BookFilled />
-    ),
-    getItem(
-      <Link to="/admin/driver-income">Driver Income</Link>,
-      "driver-income",
-      <BugFilled />
-    ),
-    getItem(
-      <Link to="/admin/driver-expense">Driver Expense</Link>,
-      "driver-expense",
-      <MoneyCollectFilled />
-    ),
-  ]),
-  getItem(
-    <Link to="/admin/inventory">Inventory</Link>,
-    "inventory",
-    <MailFilled />
-  ),
-  getItem(
-    <Link to="/admin/vehicle-profile">Vehicle Profile</Link>,
-    "vehicle-profile",
-    <BehanceSquareFilled />
-  ),
-  getItem(
-    <Link to="/admin/vehicle-document">Vehicle Document</Link>,
-    "vehicle-document",
-    <FileExcelFilled />
-  ),
-  getItem(
-    <Link to="/admin/vehicle-notification">Vehicle Notification</Link>,
-    "vehicle-notification",
-    <NotificationFilled />
-  ),
-  getItem(
-    <Link to="/admin/admin-inquiries">Feedbacks</Link>,
-    "admin-inquiries",
-    <NotificationFilled />
-  ),
-  getItem(
-    <Link to="/admin/bookings">Bookings</Link>,
-    "admin-bookings",
-    <NotificationFilled />
-  ),
-];
-
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
@@ -138,6 +55,102 @@ const AdminDashboard = () => {
       navigate("/admin-login");
     }
   }, [admin]);
+
+  const items = [
+    getItem(
+      <Link to="/admin/clients">User</Link>,
+      "clients-profile",
+      <BehanceSquareFilled />
+    ),
+    getItem("Salary Management", "user-management", <UserOutlined />, [
+      getItem(
+        <Link to="/admin/users">Salary Details</Link>,
+        "users",
+        <UsergroupAddOutlined />
+      ),
+      getItem(
+        <Link to="/admin/add-user">Add Driver</Link>,
+        "add-user",
+        <UserAddOutlined />
+      ),
+      getItem(
+        <Link to="/admin/over-time">Over Time Calculation</Link>,
+        "over-time",
+        <ClockCircleOutlined />
+      ),
+    ]),
+    getItem("Maintance Mangement", "over-time", <MailFilled />, [
+      getItem(
+        <Link to="/admin/maintances">Maintenance</Link>,
+        "all-maintances",
+        <PlusCircleFilled />
+      ),
+      getItem(
+        <Link to="/admin/add-maintances">Add Maintenance</Link>,
+        "add-main",
+        <PlusCircleFilled />
+      ),
+    ]),
+    getItem("Income/Expense Mangement", "incme-expense", <MailFilled />, [
+      getItem(
+        <Link to="/admin/booking-income">Booking Income</Link>,
+        "booking-income",
+        <BookFilled />
+      ),
+      getItem(
+        <Link to="/admin/driver-income">Driver Income</Link>,
+        "driver-income",
+        <BugFilled />
+      ),
+      getItem(
+        <Link to="/admin/driver-expense">Driver Expense</Link>,
+        "driver-expense",
+        <MoneyCollectFilled />
+      ),
+    ]),
+    getItem(
+      <Link to="/admin/inventory">Inventory</Link>,
+      "inventory",
+      <MailFilled />
+    ),
+    getItem(
+      <Link to="/admin/vehicle-profile">Vehicle Profile</Link>,
+      "vehicle-profile",
+      <BehanceSquareFilled />
+    ),
+    getItem(
+      <Link to="/admin/vehicle-document">Vehicle Document</Link>,
+      "vehicle-document",
+      <FileExcelFilled />
+    ),
+    getItem(
+      <Link to="/admin/vehicle-notification">Vehicle Notification</Link>,
+      "vehicle-notification",
+      <NotificationFilled />
+    ),
+    getItem(
+      <Link to="/admin/admin-inquiries">Feedbacks</Link>,
+      "admin-inquiries",
+      <NotificationFilled />
+    ),
+    getItem(
+      <Link to="/admin/bookings">Bookings</Link>,
+      "admin-bookings",
+      <NotificationFilled />
+    ),
+    getItem(
+      <p
+        onClick={() => {
+          localStorage.clear();
+          navigate("/admin-login");
+        }}
+      >
+        Logout
+      </p>,
+      "logout",
+      <LogoutOutlined />
+    ),
+  ];
 
   return (
     <Layout style={{ minHeight: "100vh", maxWidth: "100vw" }}>
