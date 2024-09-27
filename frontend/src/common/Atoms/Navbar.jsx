@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { SearchOutlined, LogoutOutlined } from "@ant-design/icons";
+import { Select } from "antd";
 
 // Styled components for NavBar
 const NavBarContainer = styled.nav`
@@ -54,8 +55,9 @@ const IconContainer = styled.div`
     margin-left: 20px;
   }
 `;
-
+const { Option } = Select;
 const NavBar = () => {
+  const [selectedItem, setSelectedItem] = useState("inventory");
   return (
     <NavBarContainer>
       <NavLinks>
@@ -70,6 +72,27 @@ const NavBar = () => {
             <Link to="/my-bookings">My Bookings</Link>
           </>
         )}
+        <Select
+          onChange={(value) => {
+            setSelectedItem(value);
+          }}
+          value={selectedItem}
+        >
+          <Option value="inventory">
+            <Link to="/user-inventory">Inventory</Link>
+          </Option>
+          <Option value="employee-profile">
+            <Link to="/employee-profile">Employee Profile</Link>
+          </Option>
+          <Option value="payments">
+            {" "}
+            <Link to="/user-payments">Payments</Link>
+          </Option>
+          <Option value="maintance">
+            {" "}
+            <Link to="/maintance">Maintance</Link>
+          </Option>
+        </Select>
       </NavLinks>
 
       <SearchContainer>

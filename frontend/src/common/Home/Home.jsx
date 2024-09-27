@@ -12,6 +12,7 @@ import Feedbacks from "../../modules/Inquiry/Feedbacks";
 import MyFeedbacks from "../../modules/Inquiry/MyFeedbacks";
 import MyBookings from "../../modules/Bookings/MyBookings";
 import VehicleProfileList from "../../modules/Vehicel/VehicleProfileList";
+import UserInventories from "../../modules/Inventory/UserInventories";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -45,6 +46,7 @@ const Home = () => {
           <Route path="my-feedbacks" element={<MyFeedbacks />} />
           <Route path="my-bookings" element={<MyBookings />} />
           <Route path="vehicle-list" element={<VehicleProfileList />} />
+          <Route path="user-inventory" element={<UserInventories />} />
         </Routes>
       </Container>
       <Footer />
