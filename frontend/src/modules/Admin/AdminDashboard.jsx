@@ -10,6 +10,9 @@ import {
   BugFilled,
   BookFilled,
   MoneyCollectFilled,
+  BehanceSquareFilled,
+  NotificationFilled,
+  FileExcelFilled,
 } from "@ant-design/icons";
 import { Route, Routes, Link, Outlet } from "react-router-dom";
 import AddUser from "../UserManagement/AddUser";
@@ -21,6 +24,9 @@ import BookingIncomeManager from "../IncomeExpenseManagemt/BookingIncomeManager"
 import DriverIncomeManager from "../IncomeExpenseManagemt/DriverIncomeManager";
 import ExpenseManger from "../IncomeExpenseManagemt/ExpenseManger";
 import InventoryManager from "../Inventory/InventoryManager";
+import VehicleProfileManager from "../Vehicel/VehicleProfileManager";
+import VehicleDocumentManger from "../Vehicel/VehicleDocumentManger";
+import VehicleNotification from "../Vehicel/VehicleNotification";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -85,6 +91,21 @@ const items = [
     "inventory",
     <MailFilled />
   ),
+  getItem(
+    <Link to="/admin/vehicle-profile">Vehicle Profile</Link>,
+    "vehicle-profile",
+    <BehanceSquareFilled />
+  ),
+  getItem(
+    <Link to="/admin/vehicle-document">Vehicle Document</Link>,
+    "vehicle-document",
+    <FileExcelFilled />
+  ),
+  getItem(
+    <Link to="/admin/vehicle-notification">Vehicle Notification</Link>,
+    "vehicle-notification",
+    <NotificationFilled />
+  ),
 ];
 
 const AdminDashboard = () => {
@@ -124,6 +145,18 @@ const AdminDashboard = () => {
               <Route path="driver-income" element={<DriverIncomeManager />} />
               <Route path="driver-expense" element={<ExpenseManger />} />
               <Route path="inventory" element={<InventoryManager />} />
+              <Route
+                path="vehicle-profile"
+                element={<VehicleProfileManager />}
+              />
+              <Route
+                path="vehicle-document"
+                element={<VehicleDocumentManger />}
+              />
+              <Route
+                path="vehicle-notification"
+                element={<VehicleNotification />}
+              />
             </Routes>
             <Outlet />
           </div>

@@ -17,6 +17,6 @@ router.use("/driver-income", driverIncome);
 router.use("/inventory", inventoryRoutes);
 router.use("/maintenance", maintenanceRoutes);
 router.use("/vprofiles", vehicleProfileRoutes);
-router.use("/api/vehicles", vehicleRoutes);
+router.use("/vehicles", vehicleRoutes);
 
 module.exports = router;
