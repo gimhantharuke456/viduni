@@ -47,6 +47,7 @@ function AddServices() {
   return (
     <div>
       <div className="table-container1">
+        <SideBar />
         <h2>Add Services</h2>
         <form onSubmit={handleSubmit}>
           <label>Service ID</label>

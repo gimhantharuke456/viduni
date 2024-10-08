@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function DriverSideBar() {
   return (
     <div className="sidebar">
-      <Link to="/" className="model">
+      <Link to="/maintance" className="model">
         <h2>Maintenance and Repair Details</h2>
       </Link>
       <ul>

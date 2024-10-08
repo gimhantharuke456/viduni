@@ -45,7 +45,8 @@ function RepairVeh() {
   };
 
   return (
-    <div style={{ display: "flex", width: "90vw" }}>
+    <div style={{ display: "flex" }}>
+      <SideBar />
       <div
         style={{
           display: "flex",

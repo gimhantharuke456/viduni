@@ -10,7 +10,7 @@ function MaintanceHome() {
 
       <div class="card-container1">
         <div class="box1">
-          <img src="./images/service.jpg" alt="" className="card-image" />
+          <img src="/images/service.jpg" alt="" className="card-image" />
           <p>
             "Ensure your fleet stays in top condition with our comprehensive
             vehicle services. From routine maintenance to specialized repairs,
@@ -28,7 +28,7 @@ function MaintanceHome() {
 
       <div class="card-container1">
         <div class="box2">
-          <img src="./images/repair.jpeg" alt="" className="card-image1" />
+          <img src="/images/repair.jpeg" alt="" className="card-image1" />
           <p>
             "Get fast and efficient vehicle repair services to minimize downtime
             and get your vehicles back on the road. Our skilled technicians
@@ -45,7 +45,7 @@ function MaintanceHome() {
 
       <div class="card-container1">
         <div class="box1">
-          <img src="./images/beeakdown.jpg" alt="" className="card-image" />
+          <img src="/images/beeakdown.jpg" alt="" className="card-image" />
           <p>
             "Quickly resolve unexpected vehicle breakdowns with our responsive
             repair services. Our expert team provides on-site and off-site

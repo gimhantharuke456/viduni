@@ -12,7 +12,7 @@ import UpdateRepairs from "./modules/Maintaince/Admin/UpdateRepairs";
 import RepairVeh from "./modules/Maintaince/Admin/RepairVeh";
 import DriverRepairs from "./modules/Maintaince/Driver/DriverRepairs";
 import DriverServices from "./modules/Maintaince/Driver/DriverServices";
-import Breakdown from "./modules/Maintaince/Admin/Breakdown";
+import Breakdown from "./modules/Maintaince/Admin/Breakdowns";
 import DriverBreakdowns from "./modules/Maintaince/Driver/DriverBreakdowns";
 import AddBreakdown from "./modules/Maintaince/Driver/AddBreakdowns";
 import UpdateBreakdown from "./modules/Maintaince/Driver/UpdateBreakdowns";

@@ -80,7 +80,7 @@ const AdminDashboard = () => {
       ),
     ]),
     getItem(
-      <Link to="/maintance">Maintance Mangement</Link>,
+      <Link to="/Service">Maintance Mangement</Link>,
       "over-time",
       <MailFilled />
     ),

@@ -45,57 +45,66 @@ function Services() {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <SideBar />
-      <div className="Search">
-        <input
-          onChange={(e) => setSearchQuery(e.target.value)}
-          type="text"
-          name="search"
-          placeholder="Search Service Details............"
-        />
-        <button onClick={handleSearch}>Search</button>
-      </div>
-
-      {noResults ? (
-        <div>
-          <p>No Services Found</p>
+      <div
+        style={{
+          display: "flex",
+          flex: 1,
+          height: "100vh",
+          flexDirection: "column",
+          alignItems: "flex-end",
+        }}
+      >
+        <div className="Search">
+          <input
+            onChange={(e) => setSearchQuery(e.target.value)}
+            type="text"
+            name="search"
+            placeholder="Search Service Details............"
+          />
+          <button onClick={handleSearch}>Search</button>
         </div>
-      ) : (
-        <div ref={ComponentRef} className="table-container1">
-          <h2>Service Management</h2>
-          <br />
-          {maintenances.length > 0 ? (
-            <table className="table-container2">
-              <thead>
-                <tr>
-                  <th>Service ID</th>
-                  <th>Vehicle Number</th>
-                  <th>Service Date</th>
-                  <th>Service Type</th>
-                  <th>Service Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {maintenances.map((maintenance, i) => (
-                  <Service key={i} maintenances={maintenance} />
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <h3>No service data available</h3>
-          )}
+
+        {noResults ? (
           <div>
+            <p>No Services Found</p>
+          </div>
+        ) : (
+          <div ref={ComponentRef}>
+            <h2>Service Management</h2>
             <br />
-            <Link to="/admin/addServices" className="model">
+            {maintenances.length > 0 ? (
+              <table className="table-container2">
+                <thead>
+                  <tr>
+                    <th>Service ID</th>
+                    <th>Vehicle Number</th>
+                    <th>Service Date</th>
+                    <th>Service Type</th>
+                    <th>Service Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {maintenances.map((maintenance, i) => (
+                    <Service key={i} maintenances={maintenance} />
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <h3>No service data available</h3>
+            )}
+
+            <br />
+            <Link to="/addServices" className="model">
               <button>Add</button>
             </Link>
             <button className="report" onClick={handlePrint}>
               Generate Report
             </button>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
