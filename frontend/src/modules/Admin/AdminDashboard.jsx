@@ -31,6 +31,7 @@ import UserInquiries from "../Inquiry/UserInquiries";
 import Drivers from "../UserManagement/Users";
 import Users from "../Client/Users";
 import AdminBookings from "../Bookings/AdminBookings";
+import BusRouteManager from "../BusRoutes/BusRoutManager";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -132,6 +133,11 @@ const AdminDashboard = () => {
       <NotificationFilled />
     ),
     getItem(
+      <Link to="/admin/bus-routes">Bus Routes</Link>,
+      "bus-routes",
+      <BehanceSquareFilled />
+    ),
+    getItem(
       <p
         onClick={() => {
           localStorage.clear();
@@ -178,6 +184,7 @@ const AdminDashboard = () => {
               <Route path="driver-expense" element={<ExpenseManger />} />
               <Route path="inventory" element={<InventoryManager />} />
               <Route path="bookings" element={<AdminBookings />} />
+              <Route path="bus-routes" element={<BusRouteManager />} />
               <Route
                 path="vehicle-profile"
                 element={<VehicleProfileManager />}

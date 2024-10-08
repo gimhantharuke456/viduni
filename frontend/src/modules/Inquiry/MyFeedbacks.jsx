@@ -55,7 +55,7 @@ const MyFeedbacks = () => {
       setLoading(true);
       const allFeedbacks = await inquiryService.getAllInquiries();
       const userFeedbacks = allFeedbacks.data.filter(
-        (feedback) => feedback.bookingUserId._id === user._id
+        (feedback) => feedback.bookingUserId?._id === user._id
       );
       setFeedbacks(userFeedbacks);
     } catch (error) {

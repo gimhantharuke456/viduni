@@ -27,10 +27,8 @@ const UserInquiries = () => {
     try {
       setLoading(true);
       const allInquiries = await inquiryService.getAllInquiries();
-      const userInquiries = allInquiries.data.filter(
-        (inquiry) => inquiry.bookingUserId._id === user?._id
-      );
-      setInquiries(userInquiries);
+
+      setInquiries(allInquiries.data);
     } catch (error) {
       console.error(`Error fetching inquiries: ${error}`);
       message.error("Error fetching inquiries");

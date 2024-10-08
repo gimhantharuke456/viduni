@@ -14,6 +14,7 @@ const maintenanceRouter = require("./modules/maintananceTwo/Route/MaintenanceRou
 const repairRouter = require("./modules/maintananceTwo/Route/RepairRoute");
 const breakdownRoute = require("./modules/maintananceTwo/Route/BreakdownRoute");
 const notificationRoute = require("./modules/maintananceTwo/Route/NotificationRoute");
+const busRoutes = require("./modules/bus.route/route");
 const router = express.Router();
 
 router.use("/users", userRoutes);
@@ -30,4 +31,5 @@ router.use("/maintenance", maintenanceRouter);
 router.use("/repair", repairRouter);
 router.use("/breakdown", breakdownRoute);
 router.use("/notification", notificationRoute);
+router.use("/bus-routes", busRoutes);
 module.exports = router;

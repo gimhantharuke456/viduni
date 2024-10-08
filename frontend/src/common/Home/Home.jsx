@@ -14,6 +14,7 @@ import MyBookings from "../../modules/Bookings/MyBookings";
 import VehicleProfileList from "../../modules/Vehicel/VehicleProfileList";
 import UserInventories from "../../modules/Inventory/UserInventories";
 import UserPayments from "../../modules/IncomeExpenseManagemt/UserPayments";
+import UserBusRoutes from "../../modules/BusRoutes/UserBusRoutes";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -49,6 +50,7 @@ const Home = () => {
           <Route path="vehicle-list" element={<VehicleProfileList />} />
           <Route path="user-inventory-" element={<UserInventories />} />
           <Route path="user-payments" element={<UserPayments />} />
+          <Route path="bus-timetables" element={<UserBusRoutes />} />
         </Routes>
       </Container>
       <Footer />
