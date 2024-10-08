@@ -79,18 +79,11 @@ const AdminDashboard = () => {
         <ClockCircleOutlined />
       ),
     ]),
-    getItem("Maintance Mangement", "over-time", <MailFilled />, [
-      getItem(
-        <Link to="/admin/maintances">Maintenance</Link>,
-        "all-maintances",
-        <PlusCircleFilled />
-      ),
-      getItem(
-        <Link to="/admin/add-maintances">Add Maintenance</Link>,
-        "add-main",
-        <PlusCircleFilled />
-      ),
-    ]),
+    getItem(
+      <Link to="/maintance">Maintance Mangement</Link>,
+      "over-time",
+      <MailFilled />
+    ),
     getItem("Income/Expense Mangement", "incme-expense", <MailFilled />, [
       getItem(
         <Link to="/admin/booking-income">Booking Income</Link>,
